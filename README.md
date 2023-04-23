@@ -1,4 +1,5 @@
 <img src="images/OCR_Chimp.png" alt="OCR Chimp going at it!" width="900px">
+<small><i>OCR Chimp going at it!</i></small>
 
 # PDF-to-Text OCR Converter Series
 
