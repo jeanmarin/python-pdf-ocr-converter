@@ -1,6 +1,6 @@
 <img src="images/OCR_Chimp.png" alt="OCR Chimp going at it!" width="900px">
 <small><i>OCR Chimp going at it!</i></small>
-
+<img src="https://img.shields.io/badge/Status-works%20after%20lot%20of%20debugging-red"> <img src="https://img.shields.io/badge/Python%20Skill-intermediate%20-brightgreen"> 
 # PDF-to-Text OCR Converter Series
 
 A series of scripts to convert PDF files to text using Optical Character Recognition (OCR). Each script in the series provides different functionality and improvements over previous versions.
