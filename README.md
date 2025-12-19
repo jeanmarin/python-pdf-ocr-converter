@@ -7,13 +7,23 @@ A series of scripts to convert PDF files to text using Optical Character Recogni
 
 ## Overview of Scripts
 
-1. `converter1.py`: Initial attempt with errors; converts a PDF to a series of images and then uses OCR to convert the images to text.
-2. `converter2.py`: Early attempt; calling the `pageObj` throws an error.
-3. `converter3.py`: Simple and elegant script; opens a dialog box to select a PDF file, converts it to text using OCR, prints the text to the console, and writes the text to a text file in the program folder.
-4. `converter4.py`: Improved version of `converter3.py` with added page separators in the text file.
-5. `converter5.py`: Further improvement of `converter4.py` with a progress bar in the terminal.
-6. `converter6.py`: Builds on `converter5.py` by sending the text to ChatGPT for corrections and writing the corrected text to a separate text file in the program folder. **Warning**: This script requires a paid OpenAI API key and may take up to three times longer than the other scripts. It generates two output files: `Output_Raw.txt` and `Output_Corrected.txt`.
-7. `converter7.py`: Enhances `converter6.py` by performing a diff between the raw text and the corrected text.
+1. `Converter1.py`: Initial attempt with errors; converts a PDF to a series of images and then uses OCR to convert the images to text.
+2. `Converter2.py`: Early attempt; calling the `pageObj` throws an error.
+3. `Converter3.py`: Opens a dialog box to select a PDF file, converts it to text using OCR, and writes `output_raw.txt`.
+4. `Converter4.py`: Adds page separators and writes `output.txt`.
+5. `Converter5.py`: Adds a terminal progress bar and writes `output.txt`.
+6. `Converter6.py`: Sends OCR text to OpenAI for corrections and writes `output_corrected.txt` (also writes `output_raw.txt` if you run `Converter7.py`).
+7. `Converter7.py`: Performs OCR + correction + diff and writes: `output_raw.txt`, `output_corrected.txt`, `output_diff.txt`.
+
+### Maintained entrypoint (recommended)
+
+The numbered scripts are now thin wrappers around a shared implementation in `pdf_ocr_converter/`.
+
+Run the refactored CLI directly:
+
+```bash
+python run_converter.py
+```
 
 ## Requirements
 
@@ -33,7 +43,7 @@ pip install -r requirements.txt
 3. Run the desired script from the command line or your favorite Python IDE:
 
 ```bash
-python converterX.py
+python ConverterX.py
 ```
 
 Replace `X` with the number of the script version you want to run.
@@ -45,7 +55,7 @@ Replace `X` with the number of the script version you want to run.
 
 - For Windows users, you may need to install the Tesseract OCR engine and set the path to the Tesseract executable in the scripts. For more information, visit [Tesseract OCR GitHub page](https://github.com/tesseract-ocr/tesseract).
 - The performance and accuracy of the OCR conversion may vary depending on the quality of the input PDF file and the OCR engine used.
-- **IMPORTANT**: Never share your ChatGPT API key. When using `converter6.py` or `converter7.py`, add your API key to a `.env` file based on the provided `.env.template` file.
+- **IMPORTANT**: Never share your ChatGPT API key. When using `Converter6.py` or `Converter7.py`, add your API key to a `.env` file based on the provided `env.template` file.
 
 ## Test Files
 
